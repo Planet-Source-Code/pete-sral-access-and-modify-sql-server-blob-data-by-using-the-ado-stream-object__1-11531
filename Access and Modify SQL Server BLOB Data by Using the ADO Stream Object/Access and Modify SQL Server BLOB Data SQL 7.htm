@@ -1,0 +1,329 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0062)http://support.microsoft.com/support/kb/articles/Q258/0/38.ASP -->
+<HTML><HEAD><TITLE>Q258038 - HOWTO: Access and Modify SQL Server BLOB Data by Using the ADO Stream Object</TITLE>
+<META http-equiv=CONTENT-Type content="text/html; charset=iso-8859-1">
+<META http-equiv=PICS-Label 
+content='(PICS-1.1 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" by "Inet@microsoft.com" for "http://support.microsoft.com" on "1998.02.17T12:28-0800" r (n 0 s 0 v 0 l 0))'>
+<META content=EN-US name=ms.locale>
+<META content="Support; KB Article" name=Category>
+<META content=Support name=Premium>
+<META content="Support; KB; adobj" name=KBArea>
+<META content=Q258038 name=KBID>
+<META 
+content="HOWTO: Access and Modify SQL Server BLOB Data by Using the ADO Stream Object" 
+name=KBTitle>
+<META content=The name=Description>
+<META content=adobj name=Product>
+<META content="March 22, 2000" name=KBCreate>
+<META content="July 10, 2000" name=KBModify>
+<META content="July 10, 2000" name=EditDate>
+<META content="" name=Question>
+<META content="WINDOWS:2.5,6.0,7.0; winnt:7.0" name=Versions>
+<META content="" name=Component>
+<META content=kbvcSearch name=Technology>
+<META content="" name=Links>
+<META content="kbVBp600 kbSQLServ700 kbGrpVBDB kbDSupport kbMDAC250 kbADO250" 
+name=Keywords>
+<META content="WINDOWS winnt" name=Platform>
+<META content="" name=Hardware>
+<META content="" name=SolutionType>
+<META content=kbhowto name=IssueType>
+<META content="" name=BoilerPlate>
+<META content="" name=ProducedView><LINK 
+href="Access and Modify SQL Server BLOB Data SQL 7_files/style.css" 
+type=text/css rel=STYLESHEET>
+<META content="MSHTML 5.50.4134.600" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff leftMargin=0 topMargin=0 rightMargin=0 MARGINWIDTH="0" 
+MARGINHEIGHT="0"><!--TOOLBAR_START--><A name=TOP><A name=TOP></A><!-- Start: ToolBar V2.0-->
+<SCRIPT language=JavaScript 
+src="Access and Modify SQL Server BLOB Data SQL 7_files/toolbar.js"></SCRIPT>
+
+<SCRIPT language=JavaScript 
+src="Access and Modify SQL Server BLOB Data SQL 7_files/global.js"></SCRIPT>
+
+<SCRIPT language=JavaScript 
+src="Access and Modify SQL Server BLOB Data SQL 7_files/EN-US_local.js"></SCRIPT>
+<!-- Start: ToolBar for down-level browsers--><SPAN id=TBDownLevelDiv>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ffffff border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="100%" height=60 rowSpan=2><A 
+      href="http://support.microsoft.com/isapi/gosupport.asp?target=/directory/default.asp"><IMG 
+      alt="Microsoft Product Support Services" 
+      src="Access and Modify SQL Server BLOB Data SQL 7_files/pss_EN-US.gif" 
+      border=0></A></TD>
+    <TD vAlign=top align=right height=20><IMG height=20 
+      src="Access and Modify SQL Server BLOB Data SQL 7_files/curve.gif" 
+      width=18 border=0></TD><!--Start Global Toolbar Section-->
+    <TD vAlign=center noWrap align=right bgColor=#000000 colSpan=2 
+      height=20><FONT face="Verdana, Arial" color=#ffffff 
+      size=1><B>&nbsp;&nbsp;<A style="COLOR: #ffffff; TEXT-DECORATION: none" 
+      target=_top 
+      href="http://support.microsoft.com/isapi/gomscom.asp?target=/products/"><FONT 
+      color=#ffffff>All Products</FONT></A>&nbsp;&nbsp;<FONT 
+      color=#ffffff>|</FONT> &nbsp;&nbsp;<A 
+      style="COLOR: #ffffff; TEXT-DECORATION: none" target=_top 
+      href="http://support.microsoft.com/isapi/gosupport.asp?target=/directory/default.asp?fr=0&amp;sd=gn"><FONT 
+      color=#ffffff>Support</FONT></A>&nbsp;&nbsp;<FONT color=#ffffff>|</FONT> 
+      &nbsp;&nbsp;<A style="COLOR: #ffffff; TEXT-DECORATION: none" target=_top 
+      href="http://support.microsoft.com/isapi/gosearch.asp?target=/"><FONT 
+      color=#ffffff>Search</FONT></A>&nbsp;&nbsp;<FONT color=#ffffff>|</FONT> 
+      &nbsp;&nbsp;<A style="COLOR: #ffffff; TEXT-DECORATION: none" target=_top 
+      href="http://support.microsoft.com/isapi/gomscom.asp?target=/"><FONT 
+      color=#ffffff>microsoft.com Home</FONT></A>&nbsp;&nbsp; </B></FONT></TD><!--End Global Toolbar Section--></TR>
+  <TR>
+    <TD vAlign=top width=19 height=40><IMG height=40 
+      src="Access and Modify SQL Server BLOB Data SQL 7_files/1ptrans.gif" 
+      width=19 border=0></TD>
+    <TD vAlign=top noWrap align=right colSpan=2 height=40><A target=_top 
+      href="http://support.microsoft.com/isapi/gomscom.asp?target=/"><IMG 
+      height=40 alt=microsoft.com 
+      src="Access and Modify SQL Server BLOB Data SQL 7_files/mslogo.gif" 
+      width=112 border=0></A></TD></TR><!-- Start: Black Line Spacer  -->
+  <TR>
+    <TD noWrap bgColor=#000000 colSpan=4 height=1></TD></TR><!-- End: Black Line Spacer -->
+  <TR><!-- Start: Local menus -->
+    <TD vAlign=center noWrap bgColor=#000000 colSpan=4 height=20><FONT 
+      face="Verdana, Arial" color=#ffffff size=1><B>&nbsp;&nbsp;<A 
+      title="Support Home" style="COLOR: #ffffff; TEXT-DECORATION: none" 
+      target=_top 
+      href="http://support.microsoft.com/isapi/gosupport.asp?target=/directory/default.asp"><FONT 
+      color=#ffffff>Support Home</FONT></A>&nbsp;&nbsp;<FONT 
+      color=#ffffff>|</FONT> &nbsp;&nbsp;<A title="Self Support" 
+      style="COLOR: #ffffff; TEXT-DECORATION: none" target=_top 
+      href="http://support.microsoft.com/isapi/gosupport.asp?target=/directory/self.asp?sd=gn"><FONT 
+      color=#ffffff>Self Support</FONT></A>&nbsp;&nbsp;<FONT 
+      color=#ffffff>|</FONT> &nbsp;&nbsp;<A title="Assisted Support" 
+      style="COLOR: #ffffff; TEXT-DECORATION: none" target=_top 
+      href="http://support.microsoft.com/isapi/gosupport.asp?target=/directory/getitem.asp?item=AD?sd=gn"><FONT 
+      color=#ffffff>Assisted Support</FONT></A>&nbsp;&nbsp;<FONT 
+      color=#ffffff>|</FONT> &nbsp;&nbsp;<A 
+      title="Comprehensive support customized by customer type" 
+      style="COLOR: #ffffff; TEXT-DECORATION: none" target=_top 
+      href="http://support.microsoft.com/isapi/gosupport.asp?target=/directory/getitem.asp?item=CS?sd=gn"><FONT 
+      color=#ffffff>Custom Support</FONT></A>&nbsp;&nbsp;<FONT 
+      color=#ffffff>|</FONT> &nbsp;&nbsp;<A 
+      title="Support by worldwide location" 
+      style="COLOR: #ffffff; TEXT-DECORATION: none" target=_top 
+      href="http://support.microsoft.com/isapi/gosupport.asp?target=/directory/ww.asp?sd=gn"><FONT 
+      color=#ffffff>Worldwide Support</FONT></A>&nbsp;&nbsp;<FONT 
+      color=#ffffff>|</FONT> </B></FONT></TD><!-- End: Local menus --></TR><!-- Start: Black Line Spacer  -->
+  <TR>
+    <TD noWrap bgColor=#000000 colSpan=4 height=1></TD></TR><!-- End: Black Line Spacer --></TBODY></TABLE></SPAN><!-- End: ToolBar For down-level browsers-->
+<SCRIPT language=JavaScript>
+<!--// Hide from old browsers
+	var ToolBar_Supported = ToolBar_Supported;
+	if (ToolBar_Supported != null && ToolBar_Supported == true)
+	{
+		TBDownLevelDiv.style.display = "none";
+		drawToolbar();
+	}
+//-->
+</SCRIPT>
+<!-- End: ToolBar V2.0--><!--TOOLBAR_END--><!--TOOLBAR_END-->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top>
+      <CENTER>
+      <TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top><FONT face="Verdana, Arial, Helvetica" size=2>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD>
+                  <H2>HOWTO: Access and Modify SQL Server BLOB Data by Using the 
+                  ADO Stream Object</H2></TD></TR></TBODY></TABLE>
+            <HR>
+            The information in this article applies to:<BR>
+            <UL>
+              <LI>ActiveX Data Objects (ADO), version 2.5 
+              <LI>Microsoft Visual Basic Professional and Enterprise Editions 
+              for Windows, version 6.0 
+              <LI>Microsoft OLE DB Provider for SQL Server, version 7.0 
+              <LI>Microsoft SQL Server version 7.0</LI></UL>
+            <HR>
+            <BR>
+            <H2>SUMMARY</H2>
+            <P>The <B>Stream</B> object introduced in ActiveX Data Objects (ADO) 
+            2.5 can be used to greatly simplify the code that needs to be 
+            written to access and modify Binary Large Object (BLOB) data in a 
+            SQL Server Database. The previous versions of ADO [ 2.0, 2.1, and 
+            2.1 SP2 ] required careful usage of the <B>GetChunk</B> and 
+            <B>AppendChunk</B> methods of the <B>Field Object</B> to read and 
+            write BLOB data in fixed-size chunks from and to a BLOB column. An 
+            alternative to this method now exists with the advent of ADO 2.5. 
+            This article includes code samples that demonstrate how the 
+            <B>Stream</B> object can be used to program the following common 
+            tasks: 
+            <UL>
+              <LI>Save the data stored in a SQL Server Image column to a file on 
+              the hard disk. 
+              <LI>Move the contents of a .gif file to an Image column in a SQL 
+              Server table. </LI></UL>
+            <P></P><BR>
+            <H2>MORE INFORMATION</H2>
+            <P>The following code samples are based on the data stored in the 
+            pub_info table in the SQL Server 7.0 pubs sample database. You need 
+            to modify the ADO connection string to point to your SQL Server 
+            installation. 
+            <H4>Example 1 : Saving the Data in a SQL Server Image Column to a 
+            File on the Hard Disk</H4>The code in this example opens a recordset 
+            on the pub_info table in the pubs database and saves the binary 
+            image data stored in the logo column of the first record to a file 
+            on the hard disk, as follows: 
+            <OL>
+              <LI>Open a new <B>Standard EXE</B> Visual Basic project.<BR><BR>
+              <LI>On the <B>Project</B> menu, click to select <B>References</B>, 
+              and then set a reference to the <B>Microsoft ActiveX Data Objects 
+              2.5 Object Library</B>.<BR><BR>
+              <LI>Place a <B>CommandButton</B> control on Form1.<BR><BR>
+              <LI>Make the following declarations in the form's General 
+              declarations section: <BR><BR><PRE class=CODESAMP>Dim cn As ADODB.Connection
+Dim rs As ADODB.Recordset
+Dim mstream As ADODB.Stream </PRE>
+              <LI>Cut and paste the following code into the <B>Click</B> event 
+              of the <B>CommandButton</B> that you added to the form: <BR><BR><PRE class=CODESAMP>Set cn = New ADODB.Connection
+cn.Open "Provider=SQLOLEDB;data Source=&lt;name of your SQL Server&gt;;
+Initial Catalog=pubs;User Id=&lt;Your Userid&gt;;Password=&lt;Your Password&gt;"
+
+Set rs = New ADODB.Recordset
+rs.Open "Select * from pub_info", cn, adOpenKeyset, adLockOptimistic
+
+Set mstream = New ADODB.Stream
+mstream.Type = adTypeBinary
+mstream.Open
+mstream.Write rs.Fields("logo").Value
+mstream.SaveToFile "c:\publogo.gif", adSaveCreateOverWrite
+
+rs.Close
+cn.Close </PRE>
+              <LI>Save and run the Visual Basic project.<BR><BR>
+              <LI>Click the <B>CommandButton</B> to save the binary data in the 
+              logo column of the first record to the file c:\publogo.gid. Look 
+              for this file in Windows Explorer and open it to view the saved 
+              image.<BR><BR>The code in this example declares an ADODB 
+              <B>Stream</B> object and sets its <B>Type </B>property to 
+              <B>adTypeBinary</B> to reflect that this object will be used to 
+              work with Binary data. Following this, the binary data stored in 
+              the logo column of the first record in the pub_info table is 
+              written out to the <B>Stream</B> object by calling its 
+              <B>Write</B> method. The <B>Stream</B> object now contains the 
+              binary data that is saved to the file by calling its 
+              <B>SaveToFile</B> method and passing in the path to the file. The 
+              <B>adSaveCreateOverWrite </B>constant passed in as the second 
+              parameter causes the <B>SaveToFile</B> method to overwrite the 
+              specified file if it already exists.<BR><BR></LI></OL>
+            <H4>Example 2 : Transfer the Image Stored in a .gif File to an Image 
+            Column in a SQL Server Table</H4>The code in this example saves an 
+            image stored in a .gif file to the logo column in the first record 
+            of the pub_info table by overwriting its current contents, as 
+            follows: 
+            <OL>
+              <LI>Open a new <B>Standard EXE</B> Visual Basic project.<BR><BR>
+              <LI>On the <B>Project </B>menu, click to select <B>References</B>, 
+              and then set a reference to the <B>Microsoft ActiveX Data Objects 
+              2.5 Object Library</B>.<BR><BR>
+              <LI>Place a <B>CommandButton</B> on Form1. <BR><BR>
+              <LI>Make the following declarations in the form's General 
+              declarations section:<BR><BR><PRE class=CODESAMP>Dim cn As ADODB.Connection
+Dim rs As ADODB.Recordset
+Dim mstream As ADODB.Stream </PRE>
+              <LI>Cut and paste the following code in the <B>Click</B> event of 
+              the <B>CommandButton</B> that you added to the form:<BR><BR><PRE class=CODESAMP>Set cn = New ADODB.Connection
+cn.Open "Provider=SQLOLEDB;data Source=&lt;name of your SQL Server&gt;;
+Initial Catalog=pubs;User Id=&lt;Your Userid&gt;;Password=&lt;Your Password&gt;"
+
+Set rs = New ADODB.Recordset
+rs.Open "Select * from pub_info", cn, adOpenKeyset, adLockOptimistic
+
+Set mstream = New ADODB.Stream
+mstream.Type = adTypeBinary
+mstream.Open
+mstream.LoadFromFile "&lt;path to .gif file&gt;"
+rs.Fields("logo").Value = mstream.Read
+rs.Update
+
+rs.Close
+cn.Close </PRE>
+              <LI>Save and run the Visual Basic project.<BR><BR>
+              <LI>Click on the <B>CommandButton</B> to run the code to stream 
+              the contents of the .gif file to the ADO <B>Stream</B> object, and 
+              save the data in the <B>Stream</B> to the logo column in the first 
+              record of the recordset.<BR><BR>
+              <LI>Verify that the image in the logo column has been modified by 
+              using the code in Example 1.<BR><BR></LI></OL>
+            <P></P>
+            <P>Additional query words: </P>
+            <P>Keywords : kbVBp600 kbSQLServ700 kbGrpVBDB kbDSupport kbMDAC250 
+            kbADO250 <BR>Version : WINDOWS:2.5,6.0,7.0; winnt:7.0 <BR>Platform : 
+            WINDOWS winnt <BR>Issue type : kbhowto <BR>Technology : kbvcSearch 
+            </P><!--CONVLEGACY DELIMITER--></FONT></TD></TR></TBODY></TABLE>
+      <P>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top>
+            <CENTER><BR><FONT face="Verdana, Arial, Helvetica" size=1>Last 
+            Reviewed: July 10, 2000<BR><A 
+            href="http://support.microsoft.com/support/misc/cpyright.asp">© 2000 
+            Microsoft Corporation. All rights reserved. Terms of 
+            Use.</A><BR></FONT></CENTER></TD></TR></TBODY></TABLE></P></CENTER></TD>
+    <TD vAlign=top width=1 bgColor=#003399><IMG height="100%" 
+      src="D:\NetTemp\VB Source &amp; Examples\BLOB\ADO Upload and Retrieve BLOB\Access and Modify SQL Server BLOB Data SQL 7_files\1ptrans(1).gif" 
+      width=1 border=0></TD>
+    <TD vAlign=top width=135>
+      <CENTER>
+      <TABLE cellSpacing=0 cellPadding=0 width="90%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top><FONT face="Verdana, Arial, Helvetica" size=1><BR>
+            <P>Article ID: Q258038</P>
+            <P><B>Last Reviewed:</B><BR>July 10, 2000 </P>
+            <P><A title="Send this article to a friend" 
+            href="mailto:?subject=Microsoft Knowledge Base Article - Q258038&amp;body=This article pointer was forwarded to you from the Microsoft Online Support site. http://support.microsoft.com/support/kb/articles/Q258/0/38.ASP"><IMG 
+            height=10 
+            src="Access and Modify SQL Server BLOB Data SQL 7_files/icoEmail.gif" 
+            width=18 align=absMiddle border=0>Send to a friend</A><BR><BR>
+            <P>Provided by<BR><A target=_top 
+            href="http://support.microsoft.com/directory/default.asp">Microsoft 
+            Product Support Services</A> 
+            <P>
+            <HR>
+
+            <FORM name=VOTED onsubmit="return votingsubmit();" 
+            action=/support/contentvoting/voting_idc.asp method=post><INPUT 
+            type=hidden value=Q258038 name=KBID> <INPUT type=hidden 
+            value="Support; KB; adobj" name=PROD> <INPUT type=hidden 
+            value="Support; KB; adobj" name=KBAREA> <INPUT type=hidden 
+            value=support.microsoft.com name=SRV> <INPUT type=hidden 
+            value=/support/kb/articles/Q258/0/38.ASP name=URL> Did the 
+            information in this article help answer your question? 
+            <P><INPUT type=radio value=1 name=VOTE>Yes<BR><INPUT type=radio 
+            value=2 name=VOTE>No<BR><INPUT type=radio value=3 name=VOTE>Did not 
+            apply 
+            <P>Please provide additional comments about this 
+            information.<BR>(255 character max) <BR><BR><TEXTAREA id=COMMENTS style="FONT-WEIGHT: normal; FONT-SIZE: xx-small; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-VARIANT: normal" name=COMMENTS rows=5 wrap=virtual cols=17 MAXLENGTH="255"></TEXTAREA> 
+            <BR>
+            <CENTER><INPUT type=image height=32 alt=Submit width=88 
+            src="Access and Modify SQL Server BLOB Data SQL 7_files/votesubmit.gif" 
+            border=0> </CENTER>
+            <SCRIPT language=JavaScript>
+<!--//
+function votingsubmit()
+{
+	if((document.VOTED.VOTE[0].checked == false) && (document.VOTED.VOTE[1].checked == false) && (document.VOTED.VOTE[2].checked == false)){
+		alert("Please choose a voting option.");
+		return false;}
+	if(document.VOTED.COMMENTS.value.length > 255){
+		alert("Your comment has exceeded the 255 character limit.\nPlease reduce the number of characters in your comment.");
+		document.forms[0].COMMENTS.focus();
+		return false;}
+	else return true;
+}
+//-->
+</SCRIPT>
+            </FORM>
+            <P></P></FONT></TD></TR></TBODY></TABLE></CENTER></TD></TR></TBODY></TABLE></BODY></HTML>

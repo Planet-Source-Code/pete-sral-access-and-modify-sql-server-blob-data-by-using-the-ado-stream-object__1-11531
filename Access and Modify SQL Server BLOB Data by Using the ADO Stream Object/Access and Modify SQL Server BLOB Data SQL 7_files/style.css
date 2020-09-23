@@ -1,0 +1,108 @@
+BODY {
+	FONT-SIZE: x-small; COLOR: black; FONT-FAMILY: Verdana,Arial
+}
+H1 {
+	FONT-SIZE: x-large; MARGIN-LEFT: 0px; TEXT-DECORATION: none
+}
+H2 {
+	FONT-SIZE: large; MARGIN-LEFT: 0px; TEXT-DECORATION: none
+}
+H3 {
+	FONT-SIZE: medium; MARGIN-LEFT: 0px; TEXT-DECORATION: none
+}
+H4 {
+	FONT-SIZE: small; MARGIN-LEFT: 0px; TEXT-DECORATION: none
+}
+H5 {
+	FONT-SIZE: x-small; MARGIN-LEFT: 0px; TEXT-DECORATION: none
+}
+H6 {
+	FONT-SIZE: xx-small; MARGIN-LEFT: 0px; TEXT-DECORATION: none
+}
+PRE {
+	FONT-SIZE: x-small; FONT-FAMILY: Courier New,Courier
+}
+UL {
+	FONT-SIZE: x-small
+}
+LI {
+	FONT-SIZE: x-small
+}
+.tier1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; COLOR: #000000; TEXT-INDENT: 5px; FONT-FAMILY: verdana, arial, helvetica; TEXT-DECORATION: none
+}
+.tier1over {
+	FONT-WEIGHT: bold; FONT-SIZE: 75%; CURSOR: hand; COLOR: #000000; TEXT-INDENT: 5px; FONT-FAMILY: verdana, arial, helvetica; TEXT-DECORATION: none
+}
+.tier2 {
+	FONT-SIZE: 70%; COLOR: #003399; TEXT-INDENT: 0px; FONT-FAMILY: verdana, arial, helvetica; TEXT-DECORATION: none
+}
+.tier2n {
+	FONT-SIZE: 75%; COLOR: #003399; TEXT-INDENT: 0px; FONT-FAMILY: verdana, arial, helvetica; TEXT-DECORATION: none
+}
+.graytext {
+	FONT-SIZE: 75%; COLOR: #cccccc; FONT-FAMILY: Verdana, Arial, helvetica; TEXT-DECORATION: none
+}
+.LINK:hover {
+	CURSOR: hand; COLOR: #ff9900
+}
+.LINK:link {
+	COLOR: blue
+}
+.LINK:active {
+	COLOR: #ff9900
+}
+.LINK:visited {
+	
+}
+.CENTER {
+	TEXT-ALIGN: center
+}
+.PARTNERCENTER {
+	FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: Verdana,Arial; BACKGROUND-COLOR: white; TEXT-ALIGN: center
+}
+.PARTNERTEXT {
+	FONT-SIZE: 9pt; COLOR: black; FONT-FAMILY: Verdana,Arial; BACKGROUND-COLOR: white; TEXT-ALIGN: left
+}
+.ERRORMESSAGE {
+	COLOR: maroon; FONT-FAMILY: "Courier New"
+}
+.FIXEDTEXT {
+	FONT-SIZE: 8pt; FONT-FAMILY: "Courier New"
+}
+.CODESAMP {
+	PADDING-RIGHT: 0.5em; MARGIN-TOP: 1em; PADDING-LEFT: 0.5em; FONT-SIZE: 8pt; MARGIN-BOTTOM: 1em; PADDING-BOTTOM: 0.5em; MARGIN-LEFT: 24px; PADDING-TOP: 0.5em; FONT-FAMILY: "Courier New"; BACKGROUND-COLOR: #eeeeee
+}
+.BETAPUBLIC {
+	BORDER-RIGHT: yellow 3px ridge; BORDER-TOP: yellow 3px ridge; BORDER-LEFT: yellow 3px ridge; BORDER-BOTTOM: yellow 3px ridge; BACKGROUND-COLOR: yellow
+}
+.TABLEGENERIC {
+	BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; BORDER-LEFT: 1px ridge; BORDER-BOTTOM: 1px ridge
+}
+.DOCINFO {
+	BORDER-RIGHT: red 3px ridge; BORDER-TOP: red 3px ridge; BORDER-LEFT: red 3px ridge; WIDTH: auto; BORDER-BOTTOM: red 3px ridge; BACKGROUND-COLOR: red
+}
+.PROPERTYBANNER {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; WIDTH: auto; FONT-STYLE: italic; FONT-FAMILY: "Verdana"; BACKGROUND-COLOR: silver; TEXT-ALIGN: center
+}
+.PROPERTYTABLE {
+	BORDER-RIGHT: black thin groove; BORDER-TOP: gray thin groove; BORDER-LEFT: gray thin groove; WIDTH: auto; BORDER-BOTTOM: black thin groove; BACKGROUND-COLOR: #640032
+}
+.PROPERTYCELL-PUBLIC {
+	FONT-WEIGHT: bold; FONT-SIZE: 6pt! important; WIDTH: auto; FONT-FAMILY: "Verdana"; BACKGROUND-COLOR: silver; TEXT-ALIGN: right
+}
+.PROPERTYVAL-PUBLIC {
+	FONT-WEIGHT: bold; FONT-SIZE: 6pt! important; WIDTH: auto; FONT-FAMILY: "Verdana"; BACKGROUND-COLOR: silver; TEXT-ALIGN: left
+}
+.PARTNERTABLE {
+	BORDER-RIGHT: white 0px ridge; BORDER-TOP: white 0px ridge; FONT-SIZE: x-small; BORDER-LEFT: white 0px ridge; WIDTH: 85%; COLOR: black; BORDER-BOTTOM: white 0px ridge; FONT-FAMILY: Verdana,Arial; BACKGROUND-COLOR: white
+}
+.CONFINFO {
+	FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: Verdana,Arial; BACKGROUND-COLOR: white; TEXT-ALIGN: center
+}
+.HEADERCONFINFO {
+	FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: Verdana,Arial; BACKGROUND-COLOR: white; TEXT-ALIGN: center
+}
+.PARTNERHEADER {
+	FONT-SIZE: 14pt; COLOR: black; FONT-STYLE: italic; FONT-FAMILY: Verdana,Arial; BACKGROUND-COLOR: white; TEXT-ALIGN: center
+}
